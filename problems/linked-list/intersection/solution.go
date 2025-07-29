@@ -1,9 +1,6 @@
 package linked_list
 
-type listNode struct {
-	Val  int
-	Next *listNode
-}
+import "github.com/y3933y3933/go-kata/implementations"
 
 /**
  * Definition for singly-linked list.
@@ -12,7 +9,7 @@ type listNode struct {
  *     Next *ListNode
  * }
  */
-func getIntersectionNode(headA, headB *listNode) *listNode {
+func getIntersectionNode(headA, headB *implementations.ListNode) *implementations.ListNode {
 	lenA := getListLength(headA)
 	lenB := getListLength(headB)
 
@@ -40,7 +37,7 @@ func getIntersectionNode(headA, headB *listNode) *listNode {
 
 }
 
-func getListLength(head *listNode) int {
+func getListLength(head *implementations.ListNode) int {
 	var length int
 	for current := head; current != nil; current = current.Next {
 		length++

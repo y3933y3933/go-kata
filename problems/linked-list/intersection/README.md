@@ -1,7 +1,15 @@
-## Intersection fo two linked list
+# Intersection point
 
 [Leetcode](https://leetcode.com/problems/intersection-of-two-linked-lists)
 
+## 問題
+找出兩個 Linked list 交集的節點。
+
+### 範例:
+```text
+Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
+Output: Intersected at '8'
+```
 
 ## 思路
 ![intersection](./intersection.png)
