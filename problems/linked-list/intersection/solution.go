@@ -1,6 +1,6 @@
-package linked_list
+package intersection
 
-import "github.com/y3933y3933/go-kata/implementations"
+import linked_list "github.com/y3933y3933/go-kata/problems/linked-list"
 
 /**
  * Definition for singly-linked list.
@@ -9,7 +9,7 @@ import "github.com/y3933y3933/go-kata/implementations"
  *     Next *ListNode
  * }
  */
-func getIntersectionNode(headA, headB *implementations.ListNode) *implementations.ListNode {
+func getIntersectionNode(headA, headB *linked_list.ListNode) *linked_list.ListNode {
 	lenA := getListLength(headA)
 	lenB := getListLength(headB)
 
@@ -37,7 +37,7 @@ func getIntersectionNode(headA, headB *implementations.ListNode) *implementation
 
 }
 
-func getListLength(head *implementations.ListNode) int {
+func getListLength(head *linked_list.ListNode) int {
 	var length int
 	for current := head; current != nil; current = current.Next {
 		length++

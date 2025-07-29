@@ -1,10 +1,10 @@
-package linked_list
+package clone
 
 import (
 	"slices"
 	"testing"
 
-	"github.com/y3933y3933/go-kata/implementations"
+	linked_list "github.com/y3933y3933/go-kata/problems/linked-list"
 )
 
 func TestCloneList(t *testing.T) {
@@ -19,36 +19,14 @@ func TestCloneList(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		original := buildList(tt.input)
+		original := linked_list.BuildList(tt.input)
 		cloned := cloneList(original)
 
-		got := listToSlice(cloned)
+		got := linked_list.ListToSlice(cloned)
 
 		if !slices.Equal(got, tt.expected) {
 			t.Errorf("cloneList(%v) = %v; want %v", tt.input, got, tt.expected)
 		}
 
 	}
-}
-
-func buildList(vals []int) *implementations.ListNode {
-	if len(vals) == 0 {
-		return nil
-	}
-	head := &implementations.ListNode{Val: vals[0]}
-	curr := head
-	for _, v := range vals[1:] {
-		curr.Next = &implementations.ListNode{Val: v}
-		curr = curr.Next
-	}
-	return head
-}
-
-func listToSlice(head *implementations.ListNode) []int {
-	var result []int
-	for head != nil {
-		result = append(result, head.Val)
-		head = head.Next
-	}
-	return result
 }
