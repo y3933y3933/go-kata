@@ -82,3 +82,6 @@ X = length of the list
 
 - Space Complexity - O(1)
 - Time Complexity - O(N)
+
+
+## 刪除
